@@ -12,20 +12,20 @@ You'll be given transactional data showing user purchases made on the app includ
 
 Keep in mind as well that someone using the app might make a purchase through the app without having received an offer or seen an offer.
 
-Example
+##Example
 To give an example, a user could receive a discount offer buy 10 dollars get 2 off on Monday. The offer is valid for 10 days from receipt. If the customer accumulates at least 10 dollars in purchases during the validity period, the customer completes the offer.
 
 However, there are a few things to watch out for in this data set. Customers do not opt into the offers that they receive; in other words, a user can receive an offer, never actually view the offer, and still complete the offer. For example, a user might receive the "buy 10 dollars get 2 dollars off offer", but the user never opens the offer during the 10 day validity period. The customer spends 15 dollars during those ten days. There will be an offer completion record in the data set; however, the customer was not influenced by the offer because the customer never viewed the offer.
 
-Cleaning
+##Cleaning
 This makes data cleaning especially important and tricky.
 
 You'll also want to take into account that some demographic groups will make purchases even if they don't receive an offer. From a business perspective, if a customer is going to make a 10 dollar purchase without an offer anyway, you wouldn't want to send a buy 10 dollars get 2 dollars off offer. You'll want to try to assess what a certain demographic group will buy when not receiving any offers.
 
-Final Advice¶
+##Final Advice¶
 Because this is a capstone project, you are free to analyze the data any way you see fit. For example, you could build a machine learning model that predicts how much someone will spend based on demographics and offer type. Or you could build a model that predicts whether or not someone will respond to an offer. Or, you don't need to build a machine learning model at all. You could develop a set of heuristics that determine what offer you should send to each customer (i.e., 75 percent of women customers who were 35 years old responded to offer A vs 40 percent from the same demographic to offer B, so send offer A).
 
-Data Sets
+#Data Sets
 The data is contained in three files:
 
 portfolio.json - containing offer ids and meta data about each offer (duration, type, etc.)
@@ -33,7 +33,7 @@ profile.json - demographic data for each customer
 transcript.json - records for transactions, offers received, offers viewed, and offers completed
 Here is the schema and explanation of each variable in the files:
 
-portfolio.json
+#portfolio.json
 
 id (string) - offer id
 offer_type (string) - type of offer ie BOGO, discount, informational
@@ -42,13 +42,14 @@ reward (int) - reward given for completing an offer
 duration (int) - time for offer to be open, in days
 channels (list of strings)
 
-profile.json
+#profile.json
 age (int) - age of the customer
 became_member_on (int) - date when customer created an app account
 gender (str) - gender of the customer (note some entries contain 'O' for other rather than M or F)
 id (str) - customer id
 income (float) - customer's income
-transcript.json
+
+#transcript.json
 
 event (str) - record description (ie transaction, offer received, offer viewed, etc.)
 person (str) - customer id
